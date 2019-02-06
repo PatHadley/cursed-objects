@@ -1,0 +1,26 @@
+{
+  "name": "cursed-objects",
+  "version": "1.0.0",
+  "description": "Museum objects. But cursed... Mwahahahaha!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatHadley/cursed-objects.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatHadley/cursed-objects/issues"
+  },
+  "homepage": "https://github.com/PatHadley/cursed-objects#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-ejs-layouts": "^2.5.0",
+    "request": "^2.88.0"
+  }
+}
