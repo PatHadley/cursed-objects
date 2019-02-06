@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 const request = require('request');
-// const argv = require('yargs').argv;
 
 function getRandomInt(max) {
 	return Math.floor(Math.random() * Math.floor(max));
@@ -16,7 +15,9 @@ request(url, function (err, response, body) {
 		console.log('error', error);
 	} else {
 		let metadata = JSON.parse(body);
-		let description = metadata.record[0].description;
-		console.log(description);
+		let item = metadata.record[0];
+		let imgUrl = `https://finds.org.uk/${item.imagedir}${item.filename}`;
+		console.log(item.description);
+		console.log(imgUrl);
 	}
 });
