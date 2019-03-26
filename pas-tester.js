@@ -5,6 +5,8 @@ function getRandomInt(max) {
 	return Math.floor(Math.random() * Math.floor(max));
 }
 
+console.log('Finding a PAS object');
+
 let itemId = getRandomInt(999999);
 let url = `https://finds.org.uk/database/artefacts/record/id/${itemId}/format/json`;
 
