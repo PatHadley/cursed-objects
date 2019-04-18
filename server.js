@@ -2,13 +2,38 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const utils = require('./utils.js');
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-	res.render('index');
+	res.render('index', { story: null, error: null });
+});
+
+app.post('/', function(req, res) {
+	let itemid = req.body.artefactIdentifier;
+	utils.getArtefact(itemid, function (err, record) {
+		if (err) {
+			res.render('index', { story: null, error: 'Error: ' + error });
+		}
+		
+		if (!record) {
+			res.render('index', { story: null, error: 'Something went wrong... no record defined for that ID.'  });
+		} 
+		else {
+			const text = 'This'
+			+ ' ' + record.primaryMaterial
+			+ ' ' + record.objecttype
+			+ ' is from between ' + record.numdate1
+			+ ' and ' + record.numdate2
+			+ '. It was discovered in ' + record.district
+			+ ' and reported to the Portable Antiquities Scheme and then ' + record.subsequentActionTerm
+			+ '. This is the normal story of an object being responsibly discovered and recorded…';
+			res.render('index', { story: text, error: null });
+		}
+	});
 });
 
 app.listen(3000, function () {
