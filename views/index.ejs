@@ -18,10 +18,15 @@
     </form>
     <% if (story !== null){ %>
       <p><%= story %></p>
-      <% } %>
-      <% if (error !== null){ %>
-        <p><%= error %></p>
-        <% } %>
-      </div>
+    <% } %>
+    
+    <% if (imgUrl) { %>
+      <img src="<%= imgUrl %>" />
+    <% } %>
+
+    <% if (error !== null){ %>
+      <p><%= error %></p>
+    <% } %>
+    </div>
     </body>
     </html>
