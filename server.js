@@ -31,7 +31,10 @@ app.post('/', function(req, res) {
 			+ '. It was discovered in ' + record.district
 			+ ' and reported to the Portable Antiquities Scheme and then ' + record.subsequentActionTerm
 			+ '. This is the normal story of an object being responsibly discovered and recorded…';
-			res.render('index', { story: text, error: null });
+			const imageUrl = 'https://finds.org.uk/'
+			+ record.imagedir
+			+ record.filename
+			res.render('index', { story: text, image: imageUrl, error: null });
 		}
 	});
 });
