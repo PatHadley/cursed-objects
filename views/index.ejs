@@ -13,7 +13,7 @@
 <body>
   <div id="container">
     <form action="/" method="post">
-      <input name="artefactIdentifier" type="text" class="" placeholder="Enter an ID" required>
+      <input name="artefactIdentifier" type="number" class="" placeholder="Enter an ID" min="1" max="999999" required>
       <input type="submit" class="" value="Go!">
     </form>
     <% if (story !== null){ %>
